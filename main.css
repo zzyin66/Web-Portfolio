@@ -45,6 +45,7 @@ a {
 p {
   text-align: center;
   font-size: 1.6rem;
+  
 }
 
 .container {
@@ -53,6 +54,19 @@ p {
   margin: 0 auto;
   padding: 0 2.4rem;
 }
+
+
+/* TEST */
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+
 
 /* HEADER */
 
@@ -358,6 +372,34 @@ header {
   transition: color 0.5s;
 }
 
+.body-btn-dark {
+  font-size: 1.5rem;
+  color: var(--main-font-color-dark);
+  position: relative;
+  transition: color 0.5s;
+}
+
+.body-btn-dark::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-font-color-dark);
+  transition: background-color 0.5s;
+}
+
+.body-btn-dark:hover,
+.body-btn-dark:focus {
+  color: var(--main-font-color-dark);
+}
+
+.body-btn-dark:hover::before,
+.body-btn-dark:focus::before {
+  background-color: var(--main-font-color-dark);
+}
+
 .body-btn::before {
   content: "";
   position: absolute;
@@ -464,6 +506,10 @@ header {
   background: url(/img/contactmeimg.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.resume .asterisk{
+  color: white;
 }
 
 .body-btn-light {
@@ -755,6 +801,8 @@ footer {
     background-size: contain;
     background-color: var(--main-font-color-dark);
   }
+
+
 
   /*Cube Animation*/
   .wrapper {

@@ -22,10 +22,12 @@ html {
   font-size: 10px;
   color: var(--body-font-color);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 section {
@@ -45,7 +47,6 @@ a {
 p {
   text-align: center;
   font-size: 1.6rem;
-  
 }
 
 .container {
@@ -55,22 +56,107 @@ p {
   padding: 0 2.4rem;
 }
 
-
-/* TEST */
-canvas {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100vw;
-  max-height: 100vh;
+/* RESUME WRAPPER */
+.resume-page {
+  height: 100vh;
+  background-color: var(--body-font-color);
 }
 
+.resume-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 90%;
+  width: 100%;
+  box-shadow: 15px 10px 8px #252525;
+  opacity: 0;
+  animation: fadeUp 1.5s forwards;
+  animation-delay: 0.9s;
+}
 
+/*  CUBE ANIMATIONS */
+
+.wrapper {
+  height: 50px;
+  width: 200px;
+  margin: 15% auto;
+  perspective: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.box-area {
+  width: 100%;
+  height: 500%;
+  position: relative;
+  animation: animate 10s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.box-area div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+}
+
+.box-area .box1 {
+  position: absolute;
+  background-color: var(--main-font-color-dark);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: translateZ(100px);
+}
+.box-area .box2 {
+  position: absolute;
+  background-color: var(--body-font-color);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.box-area .box3 {
+  position: absolute;
+  background-color: var(--main-font-color-dark);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+}
+
+.box-area .box4 {
+  position: absolute;
+  background-color: var(--body-font-color);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+}
+
+.box-area .box5 {
+  position: absolute;
+  background-color: var(--main-font-color-dark);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+}
+
+.box-area .box6 {
+  position: absolute;
+  background-color: var(--body-font-color);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  transform: rotateX(-90deg) translateZ(100px);
+}
 
 /* HEADER */
 
 header {
+  width: 100vw; /**/
   width: 100%;
   position: absolute;
   top: 0;
@@ -170,7 +256,7 @@ header {
 /* HERO */
 
 .hero {
-  width: 100%;
+  width: 100vw; /**/
   height: 100vh;
   background: url(img/hero.jpg) center no-repeat;
   background-size: cover;
@@ -332,6 +418,11 @@ header {
   height: 100vh;
 }
 
+.my-story {
+  /**/
+  width: 100vw; /**/
+} /**/
+
 .my-story .global-headline {
   margin-top: 6.9rem;
 }
@@ -345,6 +436,7 @@ header {
   color: var(--main-font-color-dark);
   letter-spacing: 0.7rem;
   margin-right: -0.7rem;
+  text-align: center;
 }
 
 .global-headline .sub-headline {
@@ -459,6 +551,7 @@ header {
 /* MY WORK */
 .my-work {
   height: 30vh;
+  width: 100vw;
   margin-top: 3rem;
   background: url(img/tasteful-recipes.jpg) center no-repeat;
   background-color: #f77307;
@@ -503,12 +596,13 @@ header {
 
 /* CONTACT */
 .resume {
-  background: url(/img/contactmeimg.jpg);
+  height: 60vh; /**/
+  background-color: var(--main-font-color-dark);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.resume .asterisk{
+.resume .asterisk {
   color: white;
 }
 
@@ -645,6 +739,18 @@ footer {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 374px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 667px) {
+  .wrapper {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 900px) {
   section {
     padding: 7.9rem;
@@ -710,6 +816,7 @@ footer {
     font-size: 4.7rem;
     letter-spacing: 0.8rem;
     margin-top: 1.5rem;
+    text-align: center;
   }
 
   .headline-services {
@@ -794,6 +901,7 @@ footer {
 
   .my-services {
     height: 100vh;
+    width: 100vw;
   }
 
   .page-separator {
@@ -801,8 +909,6 @@ footer {
     background-size: contain;
     background-color: var(--main-font-color-dark);
   }
-
-
 
   /*Cube Animation*/
   .wrapper {
@@ -880,6 +986,25 @@ footer {
     background-size: cover;
     background-position: center center;
     transform: rotateX(-90deg) translateZ(100px);
+  }
+
+  /* RESUME PAGE */
+
+  .resume-page {
+    height: 100vh;
+    background-color: var(--body-font-color);
+  }
+
+  .resume-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100%;
+    width: 35%;
+    box-shadow: 15px 10px 8px #252525;
+    opacity: 0;
+    animation: fadeUp 1.5s forwards;
+    animation-delay: 0.9s;
   }
 }
 

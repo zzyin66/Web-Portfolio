@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Source Sans Pro", sans-serif;
+  --secondary-font: "Herr Von Muellerhoff", cursive;
+  --body-font: "Cabin", sans-serif;
+  --main-font-color-dark: #f77307;
+  --secondary-font-color: #ffffff;
+  --body-font-color: #515151;
+}
+
+html {
+  font-family: var(--body-font);
+  font-size: 10px;
+  color: var(--body-font-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #140707ff;
+  height: 2000px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+}
+
+.container .bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg.png);
+  background-size: cover;
+}
+
+.container .bg1 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg1.png);
+  background-size: cover;
+}
+
+.container .bg2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg2.png);
+  background-size: cover;
+}
+
+.container .bg3 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg3.png);
+  background-size: cover;
+}
+
+.container .bg4 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg4.png);
+  background-size: cover;
+}
+
+.container .bg5 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg5.png);
+  background-size: cover;
+}
+
+.container .bg6 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg6.png);
+  background-size: cover;
+}
+
+.container .bg7 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/bg7.png);
+  background-size: cover;
+}
+
+.heading {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-family: var(--main-font);
+  opacity: 0;
+  animation: scale 1.5s forwards;
+  animation-delay: 1.4s;
+}
+
+.description {
+  padding-bottom: 100px;
+  line-height: 5rem;
+  opacity: 0;
+  animation: scale 1.5s forwards;
+  animation-delay: 2.2s;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 2.5rem;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  margin: 0 1rem;
+  opacity: 0;
+  animation: fadeUp 1.5s forwards;
+  animation-delay: 3s;
+}
+
+.cta-btn {
+  font-size: 1.1rem;
+  background-color: white;
+  padding: 0.9rem 1.8rem;
+  color: var(--body-font-color);
+  border-radius: 0.4rem;
+  transition: background-color 0.5s;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  color: var(--main-font-color-dark);
+  background-color: var(--secondary-font-color);
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
